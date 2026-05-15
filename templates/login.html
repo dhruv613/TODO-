@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tobo List — Sign In</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+  </div>
+
+  <div class="auth-wrap">
+    <div class="auth-card glass">
+
+      <div class="auth-brand">
+        <svg viewBox="0 0 32 32" fill="none" class="auth-logo">
+          <rect width="32" height="32" rx="10" fill="url(#g1)"/>
+          <path d="M9 16l5 5 9-9" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#7C3AED"/>
+              <stop offset="1" stop-color="#DB2777"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <h1>Tobo List</h1>
+        <p>Welcome — sign in or create an account</p>
+      </div>
+
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-tab="login">Sign In</button>
+        <button class="auth-tab" data-tab="register">Sign Up</button>
+        <div class="tab-indicator"></div>
+      </div>
+
+      <!-- Login Form -->
+      <form class="auth-form active" id="login-form">
+        <div class="field-group">
+          <label>Username</label>
+          <input type="text" name="username" id="login-username" placeholder="Enter your username" autocomplete="username" required />
+        </div>
+        <div class="field-group">
+          <label>Password</label>
+          <input type="password" name="password" id="login-password" placeholder="Enter your password" autocomplete="current-password" required />
+        </div>
+        <button type="submit" class="submit-btn auth-submit">
+          <span class="btn-text">Sign In</span>
+          <span class="btn-spinner"></span>
+        </button>
+      </form>
+
+      <!-- Register Form -->
+      <form class="auth-form" id="register-form">
+        <div class="field-group">
+          <label>Username</label>
+          <input type="text" name="username" id="reg-username" placeholder="Choose a username (3-30 chars)" autocomplete="username" minlength="3" maxlength="30" required />
+        </div>
+        <div class="field-group">
+          <label>Password</label>
+          <input type="password" name="password" id="reg-password" placeholder="Choose a password (min 4 chars)" autocomplete="new-password" minlength="4" required />
+        </div>
+        <div class="field-group">
+          <label>Confirm Password</label>
+          <input type="password" name="confirm" id="reg-confirm" placeholder="Re-enter password" autocomplete="new-password" required />
+        </div>
+        <button type="submit" class="submit-btn auth-submit">
+          <span class="btn-text">Create Account</span>
+          <span class="btn-spinner"></span>
+        </button>
+      </form>
+
+      <div class="auth-msg" id="auth-msg"></div>
+
+      <div class="auth-footer">
+        <small>🔒 Credentials are stored locally in <code>users.xlsx</code></small>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="/static/js/auth.js"></script>
+</body>
+</html>
